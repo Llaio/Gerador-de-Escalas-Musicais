@@ -22,6 +22,16 @@ class TestPlayer {
 
 	@Disabled
 	@Test
+	void testEscalaCMenorNatural() {
+		Player player = new Player();
+		FormulaEscala formulaEscala = new FormulaEscalaDiatonicaMenorNatural();
+		Escala escala = new GeradorEscala().geraEscala("C", formulaEscala);
+		player.tocaEscala(escala);
+	}
+
+
+	@Disabled
+	@Test
 	void testEscalaB() {
 		Player player = new Player();
 		FormulaEscala formulaEscala = new FormulaEscalaDiatonicaMaior();

@@ -14,7 +14,6 @@ public class Player {
 	
 	public Player() {
 		synth = JSyn.createSynthesizer();
-		//synth.start();
 		osc  = new SineOscillator();
 		synth.add(osc);
 		lineOut  = new LineOut(); 
@@ -30,7 +29,7 @@ public class Player {
 		}
 		synth.start();
 		for (int i=1; i<= aEscala.getQuantidadeNotas(); i++) {
-			play(aEscala.getNote(i).getFrequency(), 250);
+			play(aEscala.getNote(i).getFrequency(), 300);
 		}
 		synth.stop();
 	}
@@ -47,24 +46,6 @@ public class Player {
 			e.printStackTrace();
 		}
 	}
-
-	/*
-	public static void main(String[] args) {
-		Player fala = new Player();
-		
-		NotasExistentes notas = new NotasExistentes();
-		tocaImprime(fala, notas, "G", 1000);
-		tocaImprime(fala, notas, "A", 250);
-		tocaImprime(fala, notas, "G", 500);
-		tocaImprime(fala, notas, "E", 1000);
-	}
-
-
-	private static void tocaImprime(Player f,NotasExistentes asNotas, String nomeNota, int tempo) {
-		f.play(asNotas.getNote(nomeNota).getFrequency(), tempo);
-		System.out.println(nomeNota);
-	}
-	 */
 }
 
 
