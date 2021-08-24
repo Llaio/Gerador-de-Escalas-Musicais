@@ -44,10 +44,15 @@ public class NotasExistentes {
 	}
 	
 	public Nota getNote(int posNota) throws IndexOutOfBoundsException {
+		boolean toDouble = false;
 		if (posNota > 12) {
 			posNota = posNota - 12;
+			toDouble = true;
 		}
-		return notas.get(posNota-1);
+		Nota temp = notas.get(posNota-1);
+		Nota toReturn = new Nota(temp.getName(), temp.getFrequency());
+		toReturn.setDoubleFrequency(toDouble);
+		return toReturn;
 	}
 
 	
